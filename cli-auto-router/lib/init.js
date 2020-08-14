@@ -3,6 +3,7 @@ const figlet = promisify(require('figlet'))
 
 const clear = require('clear')
 const chalk = require('chalk')
+const open = require('open')
 const log = content => console.log(chalk.green(content))
 
 const { clone } = require('./download')
@@ -44,6 +45,11 @@ To Get Start：
     npm run serve
 ================================================
         `)
+
+        // 打开浏览器
+        open(`http://localhost:8080`);
+        await spawn('npm', ['run', 'serve'], { cwd: `./{$name}` })
+
     } catch(err) {
         log(err)
     }
