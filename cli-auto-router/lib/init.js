@@ -35,7 +35,7 @@ module.exports = async name => {
 
         // 自动安装依赖
         log('🔨安装依赖')
-        await spawn('npm', ['install'], {cwd: `./${name}`}) // cwd指定运行位置
+        await spawn('npm', ['install'], { cwd: `./${name}` }) // cwd指定运行位置
         log(`
 👌安装完成~
 
@@ -48,9 +48,9 @@ To Get Start：
 
         // 打开浏览器
         open(`http://localhost:8080`);
-        await spawn('npm', ['run', 'serve'], { cwd: `./{$name}` })
+        await spawn('npm', ['run', 'serve'], { cwd: `./${name}` })
 
-    } catch(err) {
+    } catch (err) {
         log(err)
     }
 }
